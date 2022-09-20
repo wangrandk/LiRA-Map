@@ -7,12 +7,19 @@ import ML from "./pages/ML";
 import CarData from "./pages/CarData";
 import Login from "./pages/Login";
 
+
 import "./App.css";
+import MapDemo from "./Components/MapDemo/MapDemo";
+
+
 
 const App: FC = () => {
+
+    const position = L.marker([55.7856,12.5214]);
+
     return (
         <div className="App">
-            <Router>
+            {/* <Router>
                 <Navbar />
                 <Switch>
                     <Route exact path="/cardata" component={() => <CarData />} />
@@ -20,7 +27,8 @@ const App: FC = () => {
                     <Route exact path="/ml"    component={() => <ML />} />
                     <Route exact path="/login" component={() => <Login />} />
                 </Switch>
-            </Router>
+            </Router> */}
+            <MapDemo position={position.getLatLng()} />
         </div>
     );
 }

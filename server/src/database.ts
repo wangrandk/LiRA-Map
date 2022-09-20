@@ -63,7 +63,7 @@ const databaseQuery = async <T>(func: Func<T>, ...args: any[]): Promise<T> => {
         res = await func(database, args);
         await database.destroy();
     } catch (error) {
-        console.error(error) 
+        console.error(error)
     }
     return res;
 }
